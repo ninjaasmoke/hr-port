@@ -23,3 +23,7 @@ or
 ### Comping soon...
 
 1. Different Templates & Flavours
+
+### License
+
+[CCL 4.0](https://creativecommons.org/licenses/by/4.0/)
