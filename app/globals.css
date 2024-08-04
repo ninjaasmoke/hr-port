@@ -3,31 +3,122 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 180, 180, 180;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  font-size: 16px;
+  background-color: rgb(var(--background-start-rgb));
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  z-index: 100;
+  user-select: none;
+  background: linear-gradient(45deg, black, #020011ad, #00202466, black);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+::selection {
+  background-color: #ffcc00;
+  color: #000;
+}
+
+@keyframes rainbow-move {
+  0% {
+    background-position: 0% 25%;
   }
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 50% 75%;
+  }
+  75% {
+    background-position: 75% 100%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+.rainbowText {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: var(--font-MPB), sans-serif;
+  /* background: linear-gradient(90deg, #ff0000, #ffa500, #ffa500, #ffa500, #ffff00, #008000, #00bfff, #7916c0, #ee82ee, #ff0000, #ffa500, #ffff00, #008000, #00bfff, #7916c0, #ee82ee, #ff0000, #ff0000, #ff0000); */
+  background: linear-gradient(90deg, 
+                #ffb3b3, /* pastel red */
+                #ffd9b3, /* pastel orange */
+                #ffd9b3, /* pastel orange */
+                #ffd9b3, /* pastel orange */
+                #ffffb3, /* pastel yellow */
+                #b3ffb3, /* pastel green */
+                #b3e0ff, /* pastel blue */
+                #d1b3ff, /* pastel purple */
+                #f4b3ff, /* pastel violet */
+                #ffb3b3, /* pastel red */
+                #ffd9b3, /* pastel orange */
+                #ffffb3, /* pastel yellow */
+                #b3ffb3, /* pastel green */
+                #b3e0ff, /* pastel blue */
+                #d1b3ff, /* pastel purple */
+                #f4b3ff, /* pastel violet */
+                #ffb3b3, /* pastel red */
+                #ffb3b3, /* pastel red */
+                #ffb3b3  /* pastel red */
+            );
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow-move 8s linear infinite;
+  white-space: nowrap;
+}
+
+.fixedColorText {
+  text-transform: uppercase;
+  font-family: var(--font-MPB), sans-serif;
+  color: #f02e2e;
+  /* color: #ff453b; */
+}
+
+.rainbowBackground {
+  background: linear-gradient(90deg, 
+                #f4b3ff88, /* pastel violet */
+                #ffb3b388, /* pastel red */
+                #ffd9b388, /* pastel orange */
+                #ffffb388, /* pastel yellow */
+                #b3ffb388, /* pastel green */
+                #b3e0ff88, /* pastel blue */
+                #d1b3ff88, /* pastel purple */
+                #f4b3ff88, /* pastel violet */
+                #ffb3b388, /* pastel red */
+                #ffb3b388, /* pastel red */
+                #ffb3b3,
+                #ffb3b388, /* pastel red */
+                #ffd9b388, /* pastel orange */
+                #ffd9b388, /* pastel orange */
+                #ffd9b388, /* pastel orange */
+                #ffffb388, /* pastel yellow */
+                #b3ffb388, /* pastel green */
+                #b3e0ff88, /* pastel blue */
+                #d1b3ff88 /* pastel purple */
+            );
+  background-size: 800% 800%;
+  animation: rainbow-move 8s linear infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .rainbowText {
+    font-size: 1.8rem;
+  }
+  
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: var(--font-MPB), sans-serif;
 }
