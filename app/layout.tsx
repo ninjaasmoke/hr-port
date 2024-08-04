@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "en_IE",
     url: "https://current.site",
     title: "john doe",
-    description: "building & maintaining production-grade software",
+    description: "building & maintaining life.",
     images: [
       {
         url: "https://i.ibb.co/28Mw1Cs/malevolent-red-silhouette-wallpaper-5zkfi7utebqr3kxz-1.jpg",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     site: "@current.site",
     creator: "@john",
     title: "john doe",
-    description: "building & maintaining production-grade software",
+    description: "building & maintaining life.",
     images: [
       {
         url: "https://i.ibb.co/28Mw1Cs/malevolent-red-silhouette-wallpaper-5zkfi7utebqr3kxz-1.jpg",
